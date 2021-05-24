@@ -1,4 +1,4 @@
-Make sure all dependencies are installed before starting as specified in the `pyproject.toml` file.
+Make sure all dependencies are installed before starting as specified in the `requirements.txt` file.
 
 To fetch all highlights and create a deck run
 
