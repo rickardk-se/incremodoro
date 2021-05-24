@@ -10,7 +10,6 @@ flake8==3.7.9
 frozendict==1.2
 genanki==0.8.0
 idna==2.9
-incremodoro==0.1.0
 mccabe==0.6.1
 pathspec==0.8.0
 pycodestyle==2.5.0
