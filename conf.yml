@@ -1,0 +1,25 @@
+---
+deck_id: 1119424111
+deck_title: "Inbox"
+back_template: "back.template"
+back_cloze_template: "back_cloze.template"
+css_file: "safaribooks.css"
+# cover_path: "https://learning.oreilly.com/library/cover/"
+fields:
+  - { "name": "Note" }
+  - { "name": "Highlight" }
+  - { "name": "Title" }
+  - { "name": "Author" }
+  - { "name": "Chapter" }
+  - { "name": "Book URL" }
+  - { "name": "Chapter URL" }
+  - { "name": "Cover" }
+  - { "name": "Image" }
+filename: "oreilly_learning.apkg"
+front_template: "front.template"
+front_cloze_template: "front_cloze.template"
+model_id: 1_607_392_330
+model_id_cloze: 1_607_392_331
+model_name: "OReilly Basic"
+model_name_cloze: "OReilly Cloze"
+media_dir: "media/"
