@@ -6,8 +6,8 @@ import getpass
 
 class Session:
     def __init__(self,):
-        self.client_id = "!UPDATE"
-        self.client_secret = "!UPDATE"
+        self.client_id = "532409"
+        self.client_secret = "ce1e4a0d4f726a27a6dbad88e4732c5f7dee15e36e15899971b5d5e7"
         self.auth = HTTPBasicAuth(self.client_id, self.client_secret)
         self.login_url = "https://api.oreilly.com/api/v1/auth/login/"
         self.base_url = "https://learning.oreilly.com"

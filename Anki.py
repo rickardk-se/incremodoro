@@ -139,7 +139,7 @@ class Deck:
                     row.b_url,
                     row.ch_url,
                     f'<img src="{cover}">',
-                    f'<img src="{image}">',
+                    f'<img src="{image}">' if image else '',
                 ],
                 tags=row.tags + row.extra_tags,
                 guid=hashsum,
