@@ -9,9 +9,7 @@ class Pomodoro:
         self.long_break = long_break
 
     def review(self, notes, pattern):
-        queue = sorted(
-            notes, reverse=True, key=lambda x: x.h_url.split("/")[-2]
-        )
+        queue = sorted(notes, reverse=True, key=lambda x: x.h_url.split("/")[-2])
         for note in queue:
             if pattern and pattern not in note.title:
                 continue

@@ -94,6 +94,11 @@ def main():
     bookmarks = csv_data.bookmarks
     review = csv_data.empty_highlights + csv_data.missing_tags
     highlights = csv_data.highlights
+    metadata = session.download_metadata(highlights)
+    for highlight in highlights:
+        highlight.author = ", ".join(
+            a["name"] for a in metadata[highlight.isbn]["authors"]
+        )
     conf = Conf.Configuration("conf.yml")
     deck = Anki.Deck(**conf.conf)
     deck.download_media(highlights)
@@ -110,7 +115,7 @@ def main():
             session.delete_highlight(b)
     pomodoro = Pomodoro.Pomodoro()
     if results.notes:
-        pomodoro.review(review[:5], results.match)
+        pomodoro.review(review, results.match)
 
     if results.bookmarks and not results.delete:
         pomodoro.review(bookmarks, results.match)
