@@ -26,7 +26,6 @@ class Rows:
 class Row:
     __slots__ = (
         "title",
-        "author",
         "chapter",
         "date",
         "b_url",
@@ -39,28 +38,19 @@ class Row:
         "image_name",
         "isbn",
         "cover",
+        "author",
         "number",
         "extra_tags",
     )
 
     def __init__(
-        self,
-        title,
-        author,
-        chapter,
-        date,
-        b_url,
-        ch_url,
-        h_url,
-        highlight,
-        note,
-        number,
+        self, title, chapter, date, b_url, ch_url, h_url, highlight, note, number,
     ):
         self.title = title
-        self.author = author.strip(".")
+        self.author = "Unknown"
         self.chapter = chapter
         self.date = date
-        self.b_url = b_url.replace("www.safaribooksonline.com", "learning.oreilly.com")
+        self.b_url = b_url
         self.ch_url = ch_url.replace(
             "www.safaribooksonline.com", "learning.oreilly.com"
         )
@@ -84,7 +74,7 @@ class Row:
             self.note = note
             self.tags = []
         self.note = note.split(" #")[0]
-        self.isbn = b_url.split("/")[-2]
+        self.isbn = ch_url.split("/")[-2]
         self.cover = "https://learning.oreilly.com/library/cover/" + self.isbn
         self.number = number
         self.extra_tags = [self.isbn]
@@ -95,11 +85,11 @@ class Row:
 
 def make_record(row):
     records = []
-    notes = row[8].split("||")
+    notes = row[7].split("||")
     for number, note in enumerate(notes):
         n = "#" + str(number)
         note = note.strip()
         records.append(
-            Row(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], note, n)
+            Row(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], n,)
         )
     return records

@@ -39,7 +39,7 @@ class Session:
         return self.bearer
 
     def download_csv(self):
-        url = f"{self.base_url}/a/export/csv/"
+        url = f"{self.base_url}/api/v1/annotations/export-csv/"
         data = self.session.get(url, headers=self.headers)
         return data.content.decode("utf-8").split("\r\n")
 
@@ -80,11 +80,25 @@ class Session:
 
     def delete_highlight(self, highlight, pattern=""):
         if pattern in highlight.title:
-            url = highlight.h_url
-            self.headers["x-csrftoken"] = "!UPDATE"
+            url = highlight.h_url.replace(
+                "https://learning.oreilly.com/library/view/-/",
+                "https://learning.oreilly.com/api/v1/annotations/",
+            ).replace("#", "/")
+            print(url)
+            self.headers[
+                "x-csrftoken"
+            ] = "mk0PD4En0Xx0G2k1FGrFxqFvwpjuFU01yuqpibzVdGBvVs4qw8eS1S6yq1Y5SnhM"
             self.headers["referer"] = url
-            cookies = {"csrfsafari": "!UPDATE"}
+            cookies = {"csrfsafari": self.headers["x-csrftoken"]}
             response = self.session.delete(url, headers=self.headers, cookies=cookies)
             if response.status_code in range(400, 600):
                 print(response)
             return response
+
+    def download_metadata(self, rows):
+        metadata = dict()
+        for row in rows:
+            if row.isbn not in metadata:
+                url = f"{self.base_url}/api/v1/book/{row.isbn}"
+                metadata[row.isbn] = self.session.get(url, headers=self.headers).json()
+        return metadata
