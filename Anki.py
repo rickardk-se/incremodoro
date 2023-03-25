@@ -110,7 +110,9 @@ class Deck:
         for row in rows[::-1]:  # Oldest to newest
             isbn = row.b_url.split("/")[-1]
             hashsum = hashlib.md5(
-                row.highlight.encode("utf-8") + row.chapter.encode("utf-8") + row.number.encode("utf-8")
+                row.highlight.encode("utf-8")
+                + row.chapter.encode("utf-8")
+                + row.number.encode("utf-8")
             ).hexdigest()
 
             if "&|" in row.note:
@@ -139,7 +141,7 @@ class Deck:
                     row.b_url,
                     row.ch_url,
                     f'<img src="{cover}">',
-                    f'<img src="{image}">' if image else '',
+                    f'<img src="{image}">' if image else "",
                 ],
                 tags=row.tags + row.extra_tags,
                 guid=hashsum,

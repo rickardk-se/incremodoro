@@ -14,7 +14,6 @@ import ACM
 
 def interactive_login(session):
     while not session.bearer:
-
         while True:
             try:
                 password = getpass.getpass("Password: ")
@@ -48,10 +47,16 @@ def process_csv(csv_data):
 def main():
     parser = argparse.ArgumentParser(description="Incremodoro")
     parser.add_argument(
-        "--notes", help="Review all empty notes.", action="store_true", default=False,
+        "--notes",
+        help="Review all empty notes.",
+        action="store_true",
+        default=False,
     )
     parser.add_argument(
-        "--bookmarks", help="Review all bookmarks.", action="store_true", default=False,
+        "--bookmarks",
+        help="Review all bookmarks.",
+        action="store_true",
+        default=False,
     )
     parser.add_argument(
         "--match",

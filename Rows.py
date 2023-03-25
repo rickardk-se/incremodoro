@@ -44,7 +44,16 @@ class Row:
     )
 
     def __init__(
-        self, title, chapter, date, b_url, ch_url, h_url, highlight, note, number,
+        self,
+        title,
+        chapter,
+        date,
+        b_url,
+        ch_url,
+        h_url,
+        highlight,
+        note,
+        number,
     ):
         self.title = title
         self.author = "Unknown"
@@ -90,6 +99,16 @@ def make_record(row):
         n = "#" + str(number)
         note = note.strip()
         records.append(
-            Row(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], n,)
+            Row(
+                row[0],
+                row[1],
+                row[2],
+                row[3],
+                row[4],
+                row[5],
+                row[6],
+                row[7],
+                n,
+            )
         )
     return records
