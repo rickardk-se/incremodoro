@@ -2,6 +2,7 @@ import argparse
 import csv
 import getpass
 import json
+import re
 
 import Anki
 import Conf
@@ -30,7 +31,9 @@ def interactive_login(session):
 
 
 def process_csv(csv_data):
-    file = csv.reader(csv_data, delimiter=",", quotechar='"')
+    placeholder = "- "
+    processed_data = [re.sub(r",\s", placeholder, row) for row in csv_data]
+    file = csv.reader(processed_data, delimiter=",", quotechar='"')
     try:
         next(file)
     except csv.Error:
@@ -95,6 +98,7 @@ def main():
         session = Safaribooks.Session()
     session.interactive_login(user, password)
     csv = session.download_csv()
+    print(csv)
     csv_data = process_csv(csv)
     bookmarks = csv_data.bookmarks
     review = csv_data.empty_highlights + csv_data.missing_tags

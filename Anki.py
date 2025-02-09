@@ -160,7 +160,14 @@ class Deck:
                 filename = f"{self.media_dir}{row.h_url.split('/')[-2]}-{file}"
                 self.media_files.add(filename)
                 if not os.path.exists(filename):
-                    r = requests.get(row.image, allow_redirects=True)
+                    r = requests.get(
+                        row.image,
+                        allow_redirects=True,
+                        headers={
+                            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+                        },
+                    )
+                    print(r.status_code)
                     with open(filename, "wb") as f:
                         f.write(r.content)
             filename = f"{self.media_dir}{row.isbn}.jpg"

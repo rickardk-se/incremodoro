@@ -31,8 +31,12 @@ class Session:
             "password": password,
         }
         response = self.session.post(
-            url=self.login_url, json=credentials, auth=self.auth
+            url=self.login_url,
+            json=credentials,
+            auth=self.auth,
+            headers={"User-Agent": "O'Reilly/8.45.0 iPad"},
         )
+        print(response.text)
         data = response.json()
         self.bearer = data.get("id_token")
         self.headers["Authorization"] = f"Bearer {self.bearer}"
@@ -87,9 +91,9 @@ class Session:
                 "https://learning.oreilly.com/api/v1/annotations/",
             ).replace("#", "/")
             print(url)
-            self.headers[
-                "x-csrftoken"
-            ] = "mk0PD4En0Xx0G2k1FGrFxqFvwpjuFU01yuqpibzVdGBvVs4qw8eS1S6yq1Y5SnhM"
+            self.headers["x-csrftoken"] = (
+                "mk0PD4En0Xx0G2k1FGrFxqFvwpjuFU01yuqpibzVdGBvVs4qw8eS1S6yq1Y5SnhM"
+            )
             self.headers["referer"] = url
             cookies = {"csrfsafari": self.headers["x-csrftoken"]}
             response = self.session.delete(url, headers=self.headers, cookies=cookies)

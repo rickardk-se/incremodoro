@@ -32,6 +32,7 @@ class Row:
         "ch_url",
         "h_url",
         "highlight",
+        "color",
         "note",
         "tags",
         "image",
@@ -52,6 +53,7 @@ class Row:
         ch_url,
         h_url,
         highlight,
+        color,
         note,
         number,
     ):
@@ -108,6 +110,7 @@ def make_record(row):
                 row[5],
                 row[6],
                 row[7],
+                row[8],
                 n,
             )
         )
