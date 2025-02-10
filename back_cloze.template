@@ -1,3 +1,4 @@
+<div class=card>
 <p>
 {{cloze:Note}}
 </p>
@@ -8,7 +9,8 @@
 <div class=source>
 <a href="{{Book URL}}"><div>{{Cover}}<br></div></a>
 <div class=source-info>
-<a href="{{Chapter URL}}">{{Chapter}}</br></a>
-<a href="https://learning.oreilly.com/search/?query=author%3A{{Author}}">{{Author}}</br></a>
+<a id="chapter" href="{{Chapter URL}}">{{Chapter}}</br></a>
+<a id="author" href="https://learning.oreilly.com/search/?query=author%3A{{Author}}">{{Author}}</br></a>
 </div>
 </div>
+</dib>
