@@ -32,8 +32,8 @@ def interactive_login(session):
 
 def process_csv(csv_data):
     placeholder = "- "
-    processed_data = [re.sub(r",\s", placeholder, row) for row in csv_data]
-    file = csv.reader(processed_data, delimiter=",", quotechar='"')
+    processed_data = [re.sub(r",\s", placeholder, row, count=1) for row in csv_data]
+    file = csv.reader(csv_data, delimiter=",", quotechar='"')
     try:
         next(file)
     except csv.Error:
@@ -42,6 +42,9 @@ def process_csv(csv_data):
     for row in file:
         if row:
             row = [x.strip() for x in row]
+            if len(row) != 9:
+                print(row)
+                raise ValueError("Row does not have 9 columns")
             for note in Rows.make_record(row):
                 rows.add_row(note)
     return rows
