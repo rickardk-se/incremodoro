@@ -1,45 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@font-face {
+    font-family: Ubuntu;
+    src: url('ubuntu-regular-webfont.ttf');
+}
 
-body {
-    background-color: #E95420;
-    /* Ubuntu Orange */
-    color: #FFFFFF;
-    /* White text for contrast */
-    font-family: 'Ubuntu', sans-serif;
+hr {
+    border: 1px solid #E95420;
 }
 
 .card {
     font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
     text-align: center;
-    color: #333333;
-    /* Dark gray for contrast */
-    background-color: #772953;
-    /* Ubuntu aubergine */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #f4a261;
+}
+
+.back {
+    font-size: 18px;
 }
 
 .source {
     font-family: 'Ubuntu', sans-serif;
     font-size: 12px;
     text-align: left;
-    color: #FFFFFF;
+    color: #E95420;
     width: 100px;
+    bottom: 20px;
+    left: 20px
+}
 
+.cover {
+    background-color: #111111;
+    /* Darker aubergine */
+    padding: 0 0 3px 3px;
+    /* Padding only at the top and left */
+    margin: -5px 5px 0 0;
+    /* Pull the box back to compensate for padding */
+    border-radius: 5px;
 }
 
 .source-info {
     width: 300px;
     word-wrap: break-word;
-    color: #FFFFFF;
+    color: #E95420;
 }
 
 .cloze {
     font-weight: bold;
     color: #E95420;
     /* Ubuntu Orange */
+}
+
+#chapter {
+    color: #924D8B;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+#author {
+    color: #924D8B;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 pre {
