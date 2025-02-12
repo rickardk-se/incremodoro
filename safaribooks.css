@@ -3,11 +3,6 @@
     src: url('ubuntu-regular-webfont.ttf');
 }
 
-@font-face {
-    font-family: Ubuntu-Mono;
-    src: url('UbuntuSansMono-Regular.ttf');
-}
-
 hr {
     border: 1px solid #E95420;
 }
@@ -36,7 +31,7 @@ hr {
 .cover {
     background-color: #111111;
     /* Darker aubergine */
-    padding: 0 0 3px 3px;
+    padding: 0 0 2px 3px;
     /* Padding only at the top and left */
     margin: -5px 5px 0 0;
     /* Pull the box back to compensate for padding */
@@ -74,7 +69,7 @@ pre {
     border-left: 3px solid #E95420;
     color: #FFFFFF;
     page-break-inside: avoid;
-    font-family: Ubuntu-Mono;
+    font-family: monospace;
     font-size: 15px;
     line-height: 1.6;
     margin-bottom: 1.6em;
