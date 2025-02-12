@@ -139,7 +139,7 @@ class Deck:
                     row.author,
                     row.chapter,
                     row.b_url,
-                    row.ch_url,
+                    row.h_url,
                     f'<img src="{cover}">',
                     f'<img src="{image}">' if image else "",
                 ],

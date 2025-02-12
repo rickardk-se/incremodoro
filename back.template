@@ -15,7 +15,7 @@
 </br>
 </br>
 <div class=source>
-<a href="{{Book URL}}">
+<a href="{{Chapter URL}}">
 <div class=cover>{{Cover}}<br></div></a>
 <div class=source-info>
 <a id="chapter" href="{{Chapter URL}}">{{Chapter}}</br></a>

@@ -3,6 +3,11 @@
     src: url('ubuntu-regular-webfont.ttf');
 }
 
+@font-face {
+    font-family: Ubuntu-Mono;
+    src: url('UbuntuSansMono-Regular.ttf');
+}
+
 hr {
     border: 1px solid #E95420;
 }
@@ -69,7 +74,7 @@ pre {
     border-left: 3px solid #E95420;
     color: #FFFFFF;
     page-break-inside: avoid;
-    font-family: monospace;
+    font-family: Ubuntu-Mono;
     font-size: 15px;
     line-height: 1.6;
     margin-bottom: 1.6em;
