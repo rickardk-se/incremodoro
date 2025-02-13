@@ -1,12 +1,8 @@
 <div class=card>
-<p>
-{{Note}}
-</p>
+<p>{{Note}}</p>
 <hr id=answer>
 <div class=back>
-<p>
-{{Highlight}}
-</p>
+<p>{{Highlight}}</p>
 </div>
 <div>
 {{Image}}

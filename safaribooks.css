@@ -3,6 +3,21 @@
     src: url('ubuntu-regular-webfont.ttf');
 }
 
+@font-face {
+    font-family: Ubuntu-Bold;
+    src: url('ubuntu-bold-webfont.ttf');
+}
+
+@font-face {
+    font-family: Ubuntu-Mono;
+    src: url('UbuntuSansMono-Regular.ttf');
+}
+
+p {
+    white-space: pre-line;
+
+}
+
 hr {
     border: 1px solid #E95420;
 }
@@ -29,9 +44,9 @@ hr {
 }
 
 .cover {
-    background-color: #111111;
+    background-color: #2C001E;
     /* Darker aubergine */
-    padding: 0 0 2px 3px;
+    padding: 0 0 3px 3px;
     /* Padding only at the top and left */
     margin: -5px 5px 0 0;
     /* Pull the box back to compensate for padding */
@@ -50,14 +65,22 @@ hr {
     /* Ubuntu Orange */
 }
 
+#title {
+    color: #AEA79F;
+    font-family: Ubuntu-Bold;
+    ;
+    background-color: transparent;
+    text-decoration: none;
+}
+
 #chapter {
-    color: #924D8B;
+    color: #AEA79F;
     background-color: transparent;
     text-decoration: none;
 }
 
 #author {
-    color: #924D8B;
+    color: #AEA79F;
     background-color: transparent;
     text-decoration: none;
 }
@@ -69,13 +92,13 @@ pre {
     border-left: 3px solid #E95420;
     color: #FFFFFF;
     page-break-inside: avoid;
-    font-family: monospace;
+    font-family: Ubuntu-Mono;
     font-size: 15px;
     line-height: 1.6;
-    margin-bottom: 1.6em;
+    margin-bottom: 1em;
     max-width: 100%;
     overflow: auto;
-    padding: 1em 1.5em;
+    padding: 1em .6em;
     display: block;
     word-wrap: break-word;
     text-align: left;
