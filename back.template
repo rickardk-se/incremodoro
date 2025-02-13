@@ -12,8 +12,8 @@
 </br>
 <div class=source>
 <a href="{{Chapter URL}}">
-<div class=cover>{{Cover}}<br></div></a>
 <div class=source-info>
+<a id="title" href="{{Book URL}}">{{Title}}</br></a>
 <a id="chapter" href="{{Chapter URL}}">{{Chapter}}</br></a>
 <a id="author" href="https://learning.oreilly.com/search/?query=author%3A{{Author}}">{{Author}}</br></a>
 </div>
