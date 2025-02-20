@@ -20,7 +20,9 @@ optional arguments:
 ```
 
 ## Format of highlights
+
 To create a highlight in O`Reilly you need to use the following format.
+
 1. Highlight interesting fact
 2. Add note with the following format `What is the question? &| This is the answer. #Tag1 Tag2`
 3. Run script
