@@ -1,3 +1,20 @@
+import re
+
+
+def extract_isbn(text):
+    # ISBN-13: exactly 13 digits
+    match = re.search(r"\b\d{13}\b", text)
+    if match:
+        return match.group(0)
+
+    # If not found, try ISBN-10: exactly 10 digits, last can be X
+    match = re.search(r"\b\d{9}[\dXx]\b", text)
+    if match:
+        return match.group(0)
+
+    raise ValueError(f"ISBN not found in {text}")
+
+
 class Rows:
     def __init__(self):
         self.all = []
@@ -80,12 +97,12 @@ class Row:
             self.image_name = ""
         if " #" in note:
             self.note = note.split(" #")[0]
-            self.tags = note.split(" #")[1].split()
+            self.tags = note.split(" #")[1:]
         else:
             self.note = note
             self.tags = []
         self.note = note.split(" #")[0]
-        self.isbn = ch_url.split("/")[-2]
+        self.isbn = extract_isbn(self.h_url)
         self.cover = "https://learning.oreilly.com/library/cover/" + self.isbn
         self.number = number
         self.extra_tags = [self.isbn]
