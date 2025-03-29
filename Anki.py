@@ -129,7 +129,6 @@ class Deck:
                 image = f"{row.h_url.split('/')[-2]}-{row.image_name}"
             else:
                 image = ""
-
             note = NoteX(
                 model=model,
                 fields=[
@@ -143,7 +142,7 @@ class Deck:
                     f'<img src="{cover}">',
                     f'<img src="{image}">' if image else "",
                 ],
-                tags=row.tags + row.extra_tags,
+                tags=[x.strip() for x in row.tags + row.extra_tags],
                 guid=hashsum,
             )
             self.deck.add_note(note)
